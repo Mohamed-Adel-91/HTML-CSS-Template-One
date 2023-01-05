@@ -1,10 +1,6 @@
 /* start variables */
 
-
-
-
 /* End variables */
-
 /* start Global Rules */
 * {
     -webkit-box-sizing: border-box;
@@ -15,5 +11,36 @@
 body {
     font-family: 'Work Sans', sans-serif;
 }
-
 /* End Global Rules */
+.parent {
+    background-color: #eee;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #aaa;
+}
+
+/* small */
+@media (min-width: 768px) {
+    .container{
+        width: 750px;
+    }
+}
+
+/* medium */
+@media (min-width: 992px) {
+    .container{
+        width: 970px;
+    }
+}
+
+/* large */
+@media (min-width: 1200px) {
+    .container{
+        width: 1170px;
+    }
+}
