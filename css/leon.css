@@ -3,6 +3,8 @@
   --main-color: #2980b8;
   --second-color: #1c2240;
   --third-color: #ff6633;
+  --section-padding: 60px;
+  --section-background: #f6f6f6;
 }
 /* End variables */
 /* start Global Rules */
@@ -42,6 +44,32 @@ body {
   }
 }
 /* End Global Rules */
+/* start component */
+.special-heading {
+  color: var(--third-color);
+  opacity: 0.2;
+  font-size: 100px;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: -3px;
+  margin: 0;
+}
+.special-heading + p {
+  margin: -30px 0 0;
+  font-size: 20px;
+  text-align: center;
+  color: var(--second-color);
+  opacity: 0.6;
+}
+@media (max-width: 767px) {
+  .special-heading {
+    font-size: 60px;
+  }
+  .special-heading + p {
+    margin-top: -20px;
+  }
+}
+/* end component */
 /* start header */
 .header {
   padding: 20px;
@@ -52,7 +80,7 @@ body {
   align-items: center;
 }
 .header .logo {
-  width: 180px;
+  width: 200px;
 }
 .header .links {
   position: relative;
@@ -85,7 +113,7 @@ body {
   list-style: none;
   margin: 0;
   padding: 0;
-  background-color: #f6f6f6;
+  background-color: var(--section-background);
   position: absolute;
   right: 0;
   min-width: 200px;
@@ -97,7 +125,7 @@ body {
   content: "";
   border-width: 10px;
   border-style: solid;
-  border-color: transparent transparent #f6f6f6 transparent;
+  border-color: transparent transparent var(--section-background) transparent;
   position: absolute;
   right: 5px;
   top: -20px;
@@ -152,12 +180,12 @@ body {
 
 /* end landing */
 /* start features */
-.features{
-  padding-top: 60px;
-  padding-bottom: 60px;
-  background-color: #f6f6f6;
+.features {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  background-color: var(--section-background);
 }
-.features .container{
+.features .container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 20px;
@@ -181,3 +209,108 @@ body {
   line-height: 1.8;
 }
 /* end features */
+/* start services */
+.services {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+.services .services-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 100px;
+  margin-top: 100px;
+}
+
+.services .services-content .srv {
+  display: flex;
+  margin-bottom: 40px;
+  padding: 10px;
+}
+
+@media (max-width: 767px) {
+  .services .services-content .srv {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.services .services-content .srv i {
+  color: var(--main-color);
+  flex-basis: 60px;
+}
+
+.services .services-content .srv .text {
+  flex: 1;
+}
+
+.services .services-content .srv .text h3 {
+  margin: 0 0 20px;
+  color: var(--second-color);
+}
+
+.services .services-content .srv .text p {
+  color: var(--second-color);
+  opacity: 0.8;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.services .services-content .image {
+  text-align: center;
+  position: relative;
+  top: 90px;
+}
+
+.services .services-content .image::before {
+  content: "";
+  background-color: var(--second-color);
+  width: 100px;
+  height: calc(100% + 100px);
+  top: -50px;
+  position: absolute;
+  right: 0;
+  z-index: -1;
+}
+
+.services .services-content .image img {
+  width: 250px;
+}
+
+@media (max-width: 1199px) {
+  .image-srv-col{
+    display: none;
+  }
+}
+/* end services */
+/* start portfolio */
+.portfolio {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  background-color: var(--section-background);
+}
+.portfolio .portfolio-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 30px;
+  margin-top: 80px;
+}
+.portfolio .portfolio-content .card{
+  background-color: #ffffff;
+}
+.portfolio .portfolio-content .card img {
+  max-width: 100%;
+}
+.portfolio .portfolio-content .card .info{
+  padding: 20px;
+}
+.portfolio .portfolio-content .card h3 {
+  margin: 0;
+  color: var(--second-color);
+}
+.portfolio .portfolio-content .card p {
+  color: var(--second-color);
+  opacity: 0.8;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+/* end portfolio */
